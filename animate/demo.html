@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .div1{
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            transform: rotate(0);
+            clip:rect(0,90px,180px,0);
+            border-radius: 50%;
+            background-color: red;
+            line-height: 180px;
+        }
+        span{
+            margin-left:40px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="animate.css">
+</head>
+<body>
+    <h1 class='animated bounceInRight'>2017/5/20</h1>
+    <h1 class='animated bounce infinite'>2017/5/20</h1>
+    <div class="div1"><span>半圆</span></div>
+    <script>
+        window.onload = function(){
+            var odiv1 = document.getElementsByClassName('div1')[0];
+            var num = 0,i=0;
+             setInterval(function(){
+                 i++;
+                 if(i>10){
+                     i = 10;
+                 }
+                 num +=i;
+                 odiv1.style.transform = 'rotate(' + num + 'deg)';
+
+             },100);
+        }
+    </script>
+</body>
+</html>
